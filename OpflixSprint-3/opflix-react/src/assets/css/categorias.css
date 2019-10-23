@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* box-sizing: border-box; */
+    }
+    #rodape2{
+
+        font-style: normal;
+        text-align: center;
+        color:#ffffff;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 2px;
+        background:  rgb(71, 71, 71);
+        height: 3vw
+    }
+    .titulo-sections{
+        /* display: flex; */
+        text-align: center;
+        font-size: 40px;
+        color: #ffffff;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background:  rgb(71, 71, 71);
+        height: 60px;
+        padding-top: 10px;
+    }
+.tabela{
+    text-align:center;
+    vertical-align:middle;
+    height:400px;
+    padding-top: 12vw;
+    padding-bottom: 12vw;
+}
+#tabelinha{
+    margin: 0 auto;
+}
+.linhaTabela{
+    padding: 12px;
+}
+    .menu ul{
+        width: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+        align-items: center;
+        font-family: fantasy;
+        font-size: 20px;
+     }
+li h1{
+    font-size: 54px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    color: purple
+}
+a{
+    text-decoration: none;
+     color: white;
+     justify-content: space-around;
+}
+#menuzin{
+        width: 100%;
+        height: 4em;
+        background: black;
+        display: flex;
+        align-items: center;
+        color: purple;
+         font-style: normal;
+        text-align: center;
+        color:#000;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+}

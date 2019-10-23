@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Contexts",
+    "\\Controllers",
+    "\\Domains",
+    "\\Interfaces",
+    "\\Properties",
+    "\\Repositories",
+    "\\ViewModels"
+  ],
+  "SelectedNode": "\\Controllers\\UsuarioController.cs",
+  "PreviewInSolutionExplorer": false
+}
