@@ -9,11 +9,11 @@ namespace Senai.OpFlix.WebApi.Repositories
 {
     public class CategoriaRepository : ICategoriaRepository
     {
-        public OpFlixContext opflixContext = new OpFlixContext();
+        public opflixContext opflixContext = new opflixContext();
 
         public void Atualizar(Categoria categoria)
         {
-            using (OpFlixContext ctx = new OpFlixContext())
+            using (opflixContext ctx = new opflixContext())
             {
                 Categoria CategoriaBuscada = ctx.Categoria.FirstOrDefault(x => x.IdCategoria == categoria.IdCategoria);
                 CategoriaBuscada.NomeCategoria = categoria.NomeCategoria;
@@ -24,7 +24,7 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public Categoria BuscarPorId(int id)
         {
-            using(OpFlixContext ctx = new OpFlixContext())
+            using(opflixContext ctx = new opflixContext())
             {
                 return ctx.Categoria.FirstOrDefault(x => x.IdCategoria == id);
             }
@@ -32,7 +32,7 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public void Cadastrar(Categoria categoria)
         {
-            using (OpFlixContext ctx = new OpFlixContext())
+            using (opflixContext ctx = new opflixContext())
             {
                 ctx.Categoria.Add(categoria);
                 ctx.SaveChanges();
@@ -41,7 +41,7 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public List<Categoria> Listar()
         {
-            using (OpFlixContext ctx = new OpFlixContext())
+            using (opflixContext ctx = new opflixContext())
             {
                 return ctx.Categoria.ToList();
             }

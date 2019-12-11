@@ -23,7 +23,7 @@ export default class Categorias extends Component {
             headers: { 'Authorization': "bearer " + localStorage.getItem("usuario-opflix") }
         };
 
-        Axios.get('http://localhost:5000/api/categoria',
+        Axios.get('http://192.168.4.183:5000/api/categoria',
             config
         ).then((response) => {
             this.setState({ lista: response.data })
@@ -46,6 +46,7 @@ export default class Categorias extends Component {
                                 <a href="/">Início</a>
                                 <a href="/" onClick={this.Logout}>LOGOUT</a>
                                 <Link to='/lancamentos'>Lançamentos</Link>
+                                <Link to='/localizacoes'>Localizacoes</Link>
                             </li>
                         </ul>
                     </nav>

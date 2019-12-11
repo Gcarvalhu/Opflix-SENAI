@@ -12,7 +12,7 @@ namespace Senai.OpFlix.WebApi.Repositories
     {
         public void Atualizar(Lancamentos lancamento)
         {
-            using (OpFlixContext ctx = new OpFlixContext())
+            using (opflixContext ctx = new opflixContext())
             {
                 Lancamentos LancamentoBuscado = ctx.Lancamentos.FirstOrDefault(x => x.IdLanc == lancamento.IdLanc);
                 // update categorias set nome = @nome
@@ -26,7 +26,7 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public Lancamentos BuscarPorData(DateTime DataLancamento)
         {
-            using(OpFlixContext ctx = new OpFlixContext())
+            using(opflixContext ctx = new opflixContext())
             {
                 return ctx.Lancamentos.FirstOrDefault(x => x.DataLanc == DataLancamento);
             }
@@ -34,7 +34,7 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public Lancamentos BuscarPorId(int id)
         {
-            using(OpFlixContext ctx = new OpFlixContext())
+            using(opflixContext ctx = new opflixContext())
             {
                 return ctx.Lancamentos.FirstOrDefault(x => x.IdLanc == id);
             }
@@ -42,7 +42,7 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public void Cadastrar(Lancamentos lancamento)
         {
-            using (OpFlixContext ctx = new OpFlixContext())
+            using (opflixContext ctx = new opflixContext())
             {
                 ctx.Lancamentos.Add(lancamento);
                 ctx.SaveChanges();
@@ -51,7 +51,7 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public void Deletar(int id)
         {
-            using(OpFlixContext ctx = new OpFlixContext())
+            using(opflixContext ctx = new opflixContext())
             {
                 Lancamentos Lancamento = ctx.Lancamentos.Find(id);
                 ctx.Lancamentos.Remove(Lancamento);
@@ -61,7 +61,7 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public List<Lancamentos> Listar()
         {
-            using(OpFlixContext ctx = new OpFlixContext())
+            using(opflixContext ctx = new opflixContext())
             {
                 return ctx.Lancamentos.Include(x => x.IdCategoriaNavigation).Include(x => x.IdPlataformaNavigation).ToList();
             }

@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Senai.OpFlix.WebApi.Domains
 {
-    public partial class OpFlixContext : DbContext
+    public partial class opflixContext : DbContext
     {
-        public OpFlixContext()
+        public opflixContext()
         {
         }
 
-        public OpFlixContext(DbContextOptions<OpFlixContext> options)
+        public opflixContext(DbContextOptions<opflixContext> options)
             : base(options)
         {
         }
@@ -64,6 +64,13 @@ namespace Senai.OpFlix.WebApi.Domains
 
                 entity.Property(e => e.DataLanc).HasColumnType("date");
 
+                entity.Property(e => e.FotoLanc)
+                    .IsRequired()
+                    .HasColumnName("fotoLanc")
+                    .HasMaxLength(2000)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('https://cevs.rs.gov.br/themes/modelo-servicos/images/outros/TH_imgSemImagem.png')");
+
                 entity.Property(e => e.Sinopse)
                     .IsRequired()
                     .HasMaxLength(200)
@@ -109,6 +116,13 @@ namespace Senai.OpFlix.WebApi.Domains
                     .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false);
+
+                entity.Property(e => e.FotoUsuario)
+                    .IsRequired()
+                    .HasColumnName("fotoUsuario")
+                    .HasMaxLength(2000)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('https://elaele.com.br/img/anonimo.png')");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()

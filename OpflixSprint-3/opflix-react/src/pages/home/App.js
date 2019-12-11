@@ -23,6 +23,7 @@ function App() {
               <Link to='/login'>Login</Link>
               <Link to='/lancamentos'>Lançamentos</Link>
               <Link to='/categorias'>Categorias</Link>
+              <Link to='/localizacoes'>Localizacoes</Link>
             </li>
           </ul>
         </nav>

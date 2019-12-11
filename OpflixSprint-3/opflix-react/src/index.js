@@ -14,6 +14,7 @@ import * as serviceWorker from './serviceWorker';
 import Lancamentos from './pages/lancamentos/lancamentos';
 import Cadastro from './pages/cadastro/Cadastro';
 import Categorias from './pages/categorias/categorias';
+import Localizacoes from './pages/localizacao/Localizacao';
 
 const RotaPrivada = ({ component: Component}) => (
     <Route
@@ -39,6 +40,7 @@ const routing = (
             <RotaPrivada path= '/lancamentos' component={Lancamentos}/>
             <Route path='/cadastro' component={Cadastro}/>
             <RotaPrivada path='/categorias' component={Categorias}/>
+            <Route path='/localizacoes' component={Localizacoes}/>
         </Switch>
     </div>
     </Router>

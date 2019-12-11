@@ -3,7 +3,6 @@
     "",
     "\\Contexts",
     "\\Controllers",
-    "\\Domains",
     "\\Interfaces",
     "\\Properties",
     "\\Repositories",

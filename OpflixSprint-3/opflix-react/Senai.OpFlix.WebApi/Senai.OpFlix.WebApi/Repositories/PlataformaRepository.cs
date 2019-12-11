@@ -11,7 +11,7 @@ namespace Senai.OpFlix.WebApi.Repositories
     {
         public void Atualizar(Plataforma plataforma)
         {
-            using(OpFlixContext ctx = new OpFlixContext())
+            using(opflixContext ctx = new opflixContext())
             {
                 Plataforma PlataformaBuscada = ctx.Plataforma.FirstOrDefault(x => x.IdPlataforma == plataforma.IdPlataforma);
                 PlataformaBuscada.NomePlataforma = plataforma.NomePlataforma;
@@ -22,7 +22,7 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public Plataforma BuscarPorId(int id)
         {
-            using(OpFlixContext ctx = new OpFlixContext())
+            using(opflixContext ctx = new opflixContext())
             {
                return ctx.Plataforma.FirstOrDefault(x => x.IdPlataforma == id);
             }
@@ -30,7 +30,7 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public Plataforma BuscarPorPlataforma(string plataforma)
         {
-            using (OpFlixContext ctx = new OpFlixContext())
+            using (opflixContext ctx = new opflixContext())
             {
                 return ctx.Plataforma.FirstOrDefault(x => x.NomePlataforma == plataforma);
             }
@@ -38,7 +38,7 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public void Cadastrar(Plataforma plataforma)
         {
-            using(OpFlixContext ctx = new OpFlixContext())
+            using(opflixContext ctx = new opflixContext())
             {
                 ctx.Plataforma.Add(plataforma);
                 ctx.SaveChanges();
@@ -47,7 +47,7 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public List<Plataforma> Listar()
         {
-            using(OpFlixContext ctx = new OpFlixContext())
+            using(opflixContext ctx = new opflixContext())
             {
                 return ctx.Plataforma.ToList();
             }

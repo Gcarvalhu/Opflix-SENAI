@@ -74,3 +74,8 @@ a{
         justify-content: space-around;
         align-items: center;
 }
+.footer {
+    position: fixed;
+    bottom:0;
+    width:100%;
+}

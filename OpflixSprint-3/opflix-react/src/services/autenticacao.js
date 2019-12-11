@@ -1,3 +1,5 @@
+
+
 export const parseJwt = () =>{
     var token = localStorage.getItem("usuario-opflix").split('.');
     var base64Url = token[1];

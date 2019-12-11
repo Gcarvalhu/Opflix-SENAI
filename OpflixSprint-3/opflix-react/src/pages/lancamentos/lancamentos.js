@@ -37,7 +37,7 @@ export default class Lancamentos extends Component {
     }
 
     listarLancamentos = () => {
-        Axios.get('http://localhost:5000/api/lancamentos', {
+        Axios.get('http://192.168.4.183:5000/api/lancamentos', {
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("usuario-opflix")
             }
@@ -49,7 +49,7 @@ export default class Lancamentos extends Component {
     }
     cadastrarLancamentos = (event) => {
         // event.preventDefault();
-        fetch('http://localhost:5000/api/lancamentos', {
+        fetch('http://192.168.4.183:5000/api/lancamentos', {
             method: "POST",
             body: JSON.stringify({
                 titulo: this.state.titulo,
@@ -107,7 +107,7 @@ export default class Lancamentos extends Component {
             headers: { 'Authorization': "bearer " + localStorage.getItem("usuario-opflix") }
         };
 
-        Axios.get('http://localhost:5000/api/categoria',
+        Axios.get('http://192.168.4.183:5000/api/categoria',
             config
         ).then((response) => {
             this.setState({ listaDeCategoria: response.data })
@@ -120,7 +120,7 @@ export default class Lancamentos extends Component {
             headers: { 'Authorization': "bearer " + localStorage.getItem("usuario-opflix") }
         };
 
-        Axios.get('http://localhost:5000/api/plataforma',
+        Axios.get('http://192.168.4.183:5000/api/plataforma',
             config
         ).then((response) => {
             this.setState({ listaDePlataforma: response.data })
@@ -138,6 +138,7 @@ export default class Lancamentos extends Component {
                                 <a href="/">Início</a>
                                 <a href="/" onClick={this.Logout}>LOGOUT</a>
                                 <Link to='/categorias'>Categorias</Link>
+                                <Link to='/localizacoes'>Localizacoes</Link>
                             </li>
                         </ul>
                     </nav>
@@ -157,6 +158,7 @@ export default class Lancamentos extends Component {
                     </thead>
                     <tbody>
                         {this.state.lista.map(element => {
+                            console.log(element);
                             return (
                                 <tr id="tabela-lancamentos">
                                     <td className="linhaTabela">{element.titulo}</td>

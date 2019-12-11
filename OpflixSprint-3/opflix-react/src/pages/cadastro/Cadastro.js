@@ -17,7 +17,7 @@ class Cadastro extends Component {
     cadastrarUsuario = (event) => {
         event.preventDefault();
 
-        fetch('http://localhost:5000/api/Usuario', {
+        fetch('http://192.168.4.183:5000/api/Usuario', {
             method: "POST",
             body: JSON.stringify({
                 nome: this.state.nome,
@@ -25,23 +25,13 @@ class Cadastro extends Component {
                 senha: this.state.senha,
             }),
             headers: {
+                'Accept': 'application/json',
                 "Content-Type": "application/json"
             }
         })
             .catch(erro => console.log(erro))
     }
-    nomeUsuario = (event) => {
-        this.setState({ nome: event.target.value });
-        console.log(this.state);
-    }
-    emailUsuario = (event) => {
-        this.setState({ email: event.target.value });
-        console.log(this.state);
-    }
-    senhaUsuario = (event) => {
-        this.setState({ senha: event.target.value });
-        console.log(this.state);
-    }
+
     render() {
         return (
             <div>
@@ -53,15 +43,16 @@ class Cadastro extends Component {
                                 <a href="/">Início</a>
                                 <a href="/" onClick={this.Logout}>LOGOUT</a>
                                 <Link to='/categorias'>Categorias</Link>
+                                <Link to='/localizacoes'>Localizacoes</Link>
                             </li>
                         </ul>
                     </nav>
                 </header>
                 <div className="formulario-cadastro">
                     <form onSubmit={this.cadastrarUsuario}>
-                        <input type="text" placeholder="Insira seu nome" value={this.state.nome} onChange={this.nomeUsuario} />
-                        <input type="text" placeholder="Email" value={this.state.email} onChange={this.emailUsuario} />
-                        <input type="password" placeholder="Senha(No mínimo 4 digitos ex:1234)" value={this.state.senha} onChange={this.senhaUsuario} />
+                        <input type="text" placeholder="Insira seu nome" value={this.state.nome} onChangeText={ nome => this.setState({ nome })} />
+                        <input type="text" placeholder="Email" value={this.state.email} onChangeText={ email => this.setState({ email })} />
+                        <input type="password" placeholder="Senha(No mínimo 4 digitos ex:1234)" value={this.state.senha} onChangeText={senha => this.setState({ senha })} />
                         <button onClick={this.cadastrarUsuario}>Cadastrar</button>
                     </form>
                 </div>

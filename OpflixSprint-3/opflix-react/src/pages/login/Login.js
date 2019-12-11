@@ -28,7 +28,7 @@ export default class Login extends Component {
 
     fazerLogin = (event) => {
         event.preventDefault();
-        Axios.post("http://localhost:5000/api/Login",
+        Axios.post("http://192.168.4.183:5000/api/Login",
             {
                 email: this.state.email,
                 senha: this.state.senha
@@ -59,6 +59,7 @@ export default class Login extends Component {
                                 <Link to='/login'>Login</Link>
                                 <Link to='/lancamentos'>Lançamentos</Link>
                                 <Link to='/categorias'>Categorias</Link>
+                                <Link to='/localizacoes'>Localizacoes</Link>
                             </li>
                         </ul>
                     </nav>

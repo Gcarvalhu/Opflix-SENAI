@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Senai.OpFlix.WebApi",
+    "\\Senai.OpFlix.WebApi\\Controllers"
   ],
   "SelectedNode": "\\Senai.OpFlix.WebApi.sln",
   "PreviewInSolutionExplorer": false

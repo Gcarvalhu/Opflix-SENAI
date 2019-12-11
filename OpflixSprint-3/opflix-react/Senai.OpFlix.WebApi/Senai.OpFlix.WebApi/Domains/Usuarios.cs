@@ -15,6 +15,7 @@ namespace Senai.OpFlix.WebApi.Domains
         public string Senha { get; set; }
         public string Permissao { get; set; }
         public string Nome { get; set; }
+        public string FotoUsuario { get; set; }
 
         public ICollection<Favoritos> Favoritos { get; set; }
     }
